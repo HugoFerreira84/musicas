@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifras Violão - Sua Música com Facilidade</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Cifras Violão</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#buscar-musica">Buscar Músicas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#materiais">Materiais</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#playlists">Playlists</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                    <!-- Botão de Modo Escuro -->
+                    <li class="nav-item">
+                        <button id="dark-mode-toggle" class="btn btn-outline-light ms-2">
+                            <i class="bi bi-moon"></i> Escuro
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="back-to-top" class="btn btn-primary">
+        <i class="bi bi-arrow-up-circle-fill"></i>
+    </button>
+
+    <!-- Hero Section -->
+    <section class="hero-section d-flex justify-content-center align-items-center text-center text-white vh-100"
+        id="home">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Encontre suas Músicas em Cifras</h1>
+            <p class="lead">Plataforma completa para tocar violão</p>
+            <a href="#buscar-musica" class="btn btn-primary btn-lg mt-3">Buscar Músicas</a>
+        </div>
+    </section>
+
+    <!-- Seção de Busca de Músicas -->
+    <div id="buscar-musica" style="padding: 50px;"></div>
+    <section class="py-5">
+        <div class="container text-center">
+            <h2>Busca de Músicas</h2>
+            <form class="d-flex justify-content-center mt-4" id="search-form">
+                <input id="search-input" type="text" class="form-control w-50 me-2"
+                    placeholder="Digite o nome da música ou artista">
+                <button class="btn btn-primary" type="submit">Buscar</button>
+            </form>
+            <div id="results-container" class="mt-5">
+                <!-- Resultados da busca aparecerão aqui -->
+            </div>
+
+            <!-- Modal único para exibir os resultados da busca e visualizar a cifra -->
+            <div id="modal-container" style="display: none;"> <!-- Modal começa invisível -->
+                <div id="modal-content">
+                    <span id="close-modal">&times;</span>
+                    <div id="modal-body">
+                        <h2>Resultados da Busca</h2>
+                        <div id="results-list"></div> <!-- Resultados da busca vão aqui -->
+                        <div id="cifra-container" style="display:none;"></div> <!-- Conteúdo da cifra vai aqui -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Materiais para Download -->
+    <section class="bg-light py-5" id="materiais">
+        <div class="container text-center">
+            <h2>Materiais para Download</h2>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="card">
+                        <i class="bi bi-file-earmark-music fs-1 text-primary mt-3"></i>
+                        <div class="card-body">
+                            <h5 class="card-title">Apostila de Cifras</h5>
+                            <p class="card-text">Baixe cifras completas em PDF.</p>
+                            <a href="https://drive.google.com/file/d/1MXQ-XNWjkbO5E1yrhfBDxv_hH6zx9YjS/view?usp=drive_link"
+                                class="btn btn-primary" target="_blank">Baixar PDF</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <i class="bi bi-book fs-1 text-success mt-3"></i>
+                        <div class="card-body">
+                            <h5 class="card-title">Guia de Teoria Musical</h5>
+                            <p class="card-text">Aprimore seu conhecimento em música.</p>
+                            <a href="https://drive.google.com/drive/folders/1H8mTMY3243Y4VzdOac6GUBQ_JU0WyxW4?usp=sharing"
+                                class="btn btn-success" target="_blank">Baixar PDF</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <i class="bi bi-headphones fs-1 text-warning mt-3"></i>
+                        <div class="card-body">
+                            <h5 class="card-title">Backing Tracks</h5>
+                            <p class="card-text">Treine com músicas de fundo.</p>
+                            <a href="https://drive.google.com/drive/folders/1B8NMpgNhLGBPCCC095ZG_T2sAyoq9nW8?usp=sharing"
+                                class="btn btn-warning" target="_blank">Baixar MP3</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Galeria de Imagens com 3 Temas -->
+    <section class="py-5" id="galeria">
+        <div class="container text-center">
+            <h2>Galeria de Ensino de Violão</h2>
+            <div class="row g-4 mt-4">
+                <!-- Tema 1: Postura e Técnicas Básicas -->
+                <div class="col-md-4">
+                    <h5>Postura e Técnicas Básicas</h5>
+                    <img src="images/Postura-Texnicas.jpg" class="img-fluid rounded shadow gallery-item" data-bs-toggle="modal"
+                        data-bs-target="#galleryModal" alt="Postura para tocar violão"
+                        data-description="Aqui você aprende a postura correta para tocar violão, com técnicas que facilitam o aprendizado.">
+                </div>
+
+                <!-- Tema 2: Acordes e Progressões -->
+                <div class="col-md-4">
+                    <h5>Acordes e Progressões</h5>
+                    <img src="images/Acordes-e-Progre.jpg" class="img-fluid rounded shadow gallery-item" data-bs-toggle="modal"
+                        data-bs-target="#galleryModal" alt="Acordes no violão"
+                        data-description="Acordes básicos e progressões essenciais para iniciantes no violão.">
+                </div>
+
+                <!-- Tema 3: Teoria Musical Básica -->
+                <div class="col-md-4">
+                    <h5>Teoria Musical Básica</h5>
+                    <img src="images/Teoria.jpg" class="img-fluid rounded shadow gallery-item" data-bs-toggle="modal"
+                        data-bs-target="#galleryModal" alt="Teoria musical para violão"
+                        data-description="Entenda os conceitos fundamentais de teoria musical aplicados ao violão.">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para Galeria -->
+    <div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="galleryModalLabel">Visualizar Imagem</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="" class="img-fluid" id="modal-img" alt="Imagem Modal">
+                    <p class="mt-3" id="modal-description"></p> <!-- Adicionando a descrição da imagem -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Seção de Playlists -->
+    <section class="bg-dark text-white py-5" id="playlists">
+        <div class="container text-center">
+            <h2>Playlists de Músicas</h2>
+            <div class="row mt-4">
+                <!-- Playlist Clássicos do Rock -->
+                <div class="col-md-6">
+                    <div class="card bg-secondary text-white">
+                        <div class="card-body">
+                            <h5 class="card-title">Clássicos do Rock</h5>
+                            <p class="card-text">As melhores músicas de rock para tocar no violão.</p>
+                            <!-- Embed Spotify Playlist -->
+                            <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcF6B6QPhFDv" width="100%"
+                                height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <!-- Playlist Sertanejo Hits -->
+                <div class="col-md-6">
+                    <div class="card bg-secondary text-white">
+                        <div class="card-body">
+                            <h5 class="card-title">Sertanejo Hits</h5>
+                            <p class="card-text">Os maiores sucessos para tocar no violão.</p>
+                            <!-- Embed Spotify Playlist -->
+                            <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX5FlZmJ3JWL6" width="100%"
+                                height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Apoio ao Projeto -->
+    <div class="modal fade" id="apoioModal" tabindex="-1" aria-labelledby="apoioModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="apoioModalLabel">
+                        <i class="bi bi-heart-fill"></i> Apoie Nosso Projeto
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p class="mb-3">Gostou do projeto? Contribua com uma doação via Pix!</p>
+                    <div class="bg-light p-3 rounded mb-4">
+                        <p class="mb-1">Chave Pix:</p>
+                        <h5 id="pix-key" class="fw-bold">000.111.222-33</h5>
+                    </div>
+                    <button class="btn btn-outline-primary mb-3" id="copy-pix-btn">
+                        <i class="bi bi-clipboard"></i> Copiar Chave Pix
+                    </button>
+                    <p class="small text-muted">A sua ajuda é muito importante para manter este projeto no ar!</p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Fechar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3" id="contato">
+        <div class="container">
+            <p>&copy; 2024 Cifras Violão. Todos os direitos reservados.</p>
+            <p><a href="mailto:contato@cifrasviolao.com" class="text-white">contato@cifrasviolao.com</a></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

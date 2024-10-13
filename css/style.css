@@ -1,0 +1,226 @@
+/* Estilos gerais */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+    background-color: #222;
+}
+
+/* Hero Section */
+.hero-section {
+    background-image: url('../images/guita.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-section h1 {
+    animation: slide-in 2s ease-in-out;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Galeria */
+.gallery-item {
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease;
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+}
+
+/* Variáveis de cores para modo claro e escuro */
+:root {
+    --primary-bg-color: #ffffff;
+    --primary-text-color: #000000;
+    --secondary-bg-color: #f8f9fa;
+    --secondary-text-color: #333;
+    --button-bg-color: #007bff;
+    --button-text-color: #ffffff;
+}
+
+.dark-mode {
+    --primary-bg-color: #121212;
+    --primary-text-color: #e0e0e0;
+    --secondary-bg-color: #1e1e1e;
+    --secondary-text-color: #b0b0b0;
+    --button-bg-color: #ff9800;
+    --button-text-color: #000000;
+}
+
+/* Estilos gerais */
+body {
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
+}
+
+.card, .navbar, footer {
+    background-color: var(--secondary-bg-color);
+    color: var(--secondary-text-color);
+}
+
+/* Botão Voltar ao Topo */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; /* Só aparece quando rolar a página */
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#back-to-top:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos básicos */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Campo de busca */
+#search-input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Modal */
+#modal-container {
+    display: none; /* Modal começa invisível */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro */
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal-content {
+    background-color: white;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    border-radius: 10px;
+    overflow-y: auto; /* Permite rolagem interna */
+    position: relative;
+}
+
+/* Botão de fechar o modal */
+#close-modal {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Container de resultados da busca com rolagem */
+#results-container {
+    padding: 10px;
+    max-height: 300px; /* Definindo a altura máxima para 300px */
+    overflow-y: auto;  /* Habilitando a rolagem vertical */
+    border: 1px solid #ddd; /* Adicionando borda para destacar a área de resultados */
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Cor de fundo leve */
+}
+
+
+.result {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.result h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.btn {
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Exibir conteúdo da cifra no modal */
+#cifra-container {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Estilos opcionais para o modal de apoio */
+#apoioModal .modal-body p {
+    margin-bottom: 15px;
+}
+
+#copy-pix-btn {
+    margin-bottom: 10px;
+}
