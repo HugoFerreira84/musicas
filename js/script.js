@@ -175,3 +175,16 @@ document.getElementById('copy-pix-btn').addEventListener('click', function() {
 
 // Exibir o modal de apoio a cada 2 minutos (120000 ms)
 setInterval(showApoioModal, 120000); // 2 minutos
+
+// Verifica se o usuário já aceitou os cookies
+window.onload = function() {
+    if (!localStorage.getItem('cookiesAccepted')) {
+        document.getElementById('cookie-popup').style.display = 'block';
+    }
+};
+
+// Função para aceitar os cookies e esconder o popup
+document.getElementById('accept-cookies-btn').addEventListener('click', function() {
+    localStorage.setItem('cookiesAccepted', 'true');
+    document.getElementById('cookie-popup').style.display = 'none';
+});
