@@ -224,3 +224,23 @@ pre {
 #copy-pix-btn {
     margin-bottom: 10px;
 }
+
+/*Popup*/
+.cookie-popup {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    z-index: 1000;
+}
+
+.cookie-popup a {
+    color: #ffd700;
+    text-decoration: underline;
+}
+
+.cookie-popup button {
+    margin-top: 10px;
+}
